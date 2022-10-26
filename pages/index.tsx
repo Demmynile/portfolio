@@ -29,11 +29,11 @@ const Home  = ({projects, skills, socials , experiences, pageInfo} : Props) => {
 				<title>Demola</title>
 			</Head>
 
-			<Header />
+			<Header socials = {socials} />
 
 			{/* Hero */}
 			<section id = "hero" className="snap-start">
-              <Hero />
+              <Hero pageInfo= {pageInfo}/>
 			</section>
 
 			{/* About */}
@@ -64,6 +64,7 @@ export const getStaticProps : GetStaticProps<Props> = async() => {
 	const skills: Skill[] = await fetchSkills();
 	const projects: Project[] = await fetchProjects();
 	const socials: Social[] = await fetchSocial();
+
 
 return {
   props : {
