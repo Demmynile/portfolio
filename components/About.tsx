@@ -2,14 +2,19 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import logo from '../public/demola.jpg'
 import { StaticImageData } from 'next/image'
+import { url } from 'inspector'
+import { urlFor } from '../sanity'
+import { PageInfo } from '../typings'
 
 
 
 
 
-type Props = {}
+type Props = {
+	pageInfo : PageInfo
+}
 
-export default function About({}: Props ) {
+export default function About({pageInfo}: Props ) {
 	
 	
   return (
@@ -18,17 +23,17 @@ export default function About({}: Props ) {
      <h3 className=' absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
 		About
 	 </h3>
-     {/* <motion.img
+     <motion.img
 		initial = {{
 			x : -200,
 		}} 
 
 		whileInView={{x:0}}
 		viewport={{once : true}}
-        src={logo}
-		className = "-mb-20 md:mb-0 flex-shrink-0 w-10 h-10 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[400px]"
+        src={urlFor(pageInfo?.profilePic).url()}
+		className = "-mb-20 mt-10 sm:w-[300px] sm:rounded-full sm:h-[300px] md:mb-0 flex-shrink-0 w-[200px] h-[100px] rounded-full object-cover md:rounded-lg md:w-[200px] md:h-[300px] lg:w-[500px] lg:h-[400px]"
 	
-    /> */}
+    />
 	<motion.div 
 	initial = {{
 		x : -200,
