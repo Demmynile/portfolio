@@ -4,10 +4,10 @@ import {motion} from 'framer-motion'
 import { Experience } from '../typings'
 
 type Props = {
-	experiences : Experience[]
+	
 }
 
-export default function WorkExperience({experiences}: Props) {
+export default function WorkExperience({}: Props) {
   return (
 	<motion.div
 	initial = {{
@@ -26,11 +26,11 @@ export default function WorkExperience({experiences}: Props) {
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
         Experience
 	  </h3>
-	  <div>
-		 <ExperienceCard experiences = {experiences} />
-		 {/* <ExperienceCard />
+	  <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory'>
+		 <ExperienceCard  />
 		 <ExperienceCard />
-		 <ExperienceCard /> */}
+		 <ExperienceCard />
+		 <ExperienceCard />
 	  </div>
 	</motion.div>
   )

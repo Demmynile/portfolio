@@ -1,8 +1,11 @@
 import type , {GetStaticProps, NextPage} from "next"
 import Head from "next/head"
 import About from "../components/About"
+import ContactMe from "../components/ContactMe"
 import Header from "../components/Header"
 import Hero from "../components/Hero"
+import Projects from "../components/Projects"
+import Skills from "../components/Skills"
 import WorkExperience from "../components/WorkExperience"
 import { Experience, PageInfo, Project, Skill, Social } from "../typings"
 import { fetchExperiences } from "../utils/fetchExperiences"
@@ -24,7 +27,7 @@ type Props = {
 
 const Home  = ({projects, skills, socials , experiences, pageInfo} : Props) => {
 	return (
-		<div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+		<div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-x-hidden z-0">
 			<Head>
 				<title>Demola</title>
 			</Head>
@@ -43,14 +46,24 @@ const Home  = ({projects, skills, socials , experiences, pageInfo} : Props) => {
 
 			{/* Experience */}
 			<section id = "experience" className="snap-center">
-               <WorkExperience  experiences = {experiences}/>
+               <WorkExperience  />
 			</section>
 
 			{/* Skills */}
+             <section id = "skills" className="snap-start">
+              <Skills />
+			 </section>
 
 			{/* Projects */}
 
+			<section id = "projects" className="snap-start">
+				<Projects />
+            </section>
+
 			{/* Contact Me */}
+            <section id = "contactme" className="snap-start">
+				<ContactMe />
+			</section>
 		</div>
 	)
 }
